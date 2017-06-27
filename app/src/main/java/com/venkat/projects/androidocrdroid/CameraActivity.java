@@ -23,6 +23,8 @@ public class CameraActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle cameraactivity) {
         super.onCreate(cameraactivity);
+        StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
+        StrictMode.setVmPolicy(builder.build());
         String filename = Environment.getExternalStorageDirectory().toString() + File.separator + System.currentTimeMillis() + ".jpg";
         imageuri = Uri.fromFile(new File(filename));
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
