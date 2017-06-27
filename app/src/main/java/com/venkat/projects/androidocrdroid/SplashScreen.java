@@ -41,7 +41,7 @@ public class SplashScreen extends AppCompatActivity {
                 if(write_permission_check == PackageManager.PERMISSION_GRANTED && read_permission_check== PackageManager.PERMISSION_GRANTED) {
                     CustomToast.create(SplashScreen.this, R.drawable.ic_done_black, "Permissions enabled by default");
                     Intent intent = new Intent();
-                    intent.setClass(getApplicationContext(),MainActivity.class);
+                    intent.setClass(getApplicationContext(),CameraActivity.class);
                     SplashScreen.this.finish();
                     startActivity(intent);
                 } else {
