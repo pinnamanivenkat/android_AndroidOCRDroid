@@ -17,8 +17,8 @@ import java.io.File;
 
 public class CameraActivity extends AppCompatActivity {
 
-    private static final int REQUEST_CAMERA = 0;
     private Uri imageuri;
+    private static final int REQUEST_CAMERA = 0;
 
     @Override
     protected void onCreate(Bundle cameraactivity) {
@@ -35,19 +35,19 @@ public class CameraActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_CAMERA) {
-                if (resultCode == RESULT_OK) {
-                    if (imageuri != null) {
-                        Intent intent = new Intent();
-                        intent.setClass(CameraActivity.this,MainActivity.class);
-                        intent.putExtra("imageuri",imageuri.toString());
-                        startActivity(intent);
-                        CameraActivity.this.finish();
-                    }
-                    else
-                        Log.e("CameraActivity","Cannot create path");
+            if (resultCode == RESULT_OK) {
+                if (imageuri != null) {
+                    Intent intent = new Intent();
+                    intent.setClass(CameraActivity.this,MainActivity.class);
+                    intent.putExtra("imageuri",imageuri.toString());
+                    startActivity(intent);
+                    CameraActivity.this.finish();
                 }
                 else
-                    super.onActivityResult(requestCode, resultCode, data);
+                    Log.e("CameraActivity","Cannot create path");
+            }
+            else
+                super.onActivityResult(requestCode, resultCode, data);
         }
     }
 }

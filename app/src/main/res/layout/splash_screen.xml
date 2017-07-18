@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@android:color/transparent"
     tools:context="com.venkat.projects.androidocrdroid.SplashScreen">
-    
+
     <ImageView
         android:id="@+id/splashimage"
         android:layout_width="wrap_content"
